@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- icons > font-awesome -->
+    <script
+      src="https://kit.fontawesome.com/3b1cc6c86a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../style.css" />
+    <title>Local Client</title>
+  </head>
+  <body>
+    <!-- input and buttons > before video-call -->
+    <div id="main">
+      <input
+        type="text"
+        id="username-input"
+        placeholder="Enter username"
+      /><br />
+      <input
+        type="number"
+        name="Input duration"
+        id="duration"
+        placeholder="Duration in minutes"
+        required
+      /><br />
+      <button id="sendCode" onclick="sendUsername()">Send</button>
+      <button id="startCall" onclick="startCall()">Start Call</button>
+    </div>
+    <!-- when video starts -->
+    <div id="video-call">
+      <div id="videoContainer">
+        <video id="local-video" autoplay></video>
+        <video id="remote-video" autoplay></video>
+        <h1 id="timer"></h1>
+        <div class="call-action">
+          <button onclick="muteVideo()">
+            <i id="muteVideoIcon" class="fas fa-video-slash fa-2x"></i>
+            <i
+              id="unMuteVideoIcon"
+              class="fas fa-video fa-2x"
+              style="display: none"
+            ></i>
+          </button>
+          <button onclick="muteAudio()">
+            <i id="muteAudioIcon" class="fas fa-microphone-slash fa-2x"></i>
+            <i
+              id="unMuteAudioIcon"
+              class="fas fa-microphone fa-2x"
+              style="display: none; padding: 0px 5px"
+            ></i>
+          </button>
+          <button onclick="screenShare()" id="shareBtn">
+            <i class="fas fa-desktop fa-2x"></i>
+          </button>
+          <button id="openChat">
+            <i class="fas fa-comment-dots fa-2x"></i>
+          </button>
+          <button onclick="leaveCall()">
+            <i class="fas fa-sign-out-alt fa-2x"></i>
+          </button>
+        </div>
+      </div>
+      <div id="chatContainer" style="display: none">
+        <div id="displayMessages">
+          <!-- messages added dynamically -->
+        </div>
+        <!-- File transfer -->
+        <div id="fileTransfer">
+          <input
+            type="file"
+            name="send_file"
+            id="inputFile"
+            style="width: 250px"
+          />
+          <button id="sendFileBtn">Send File</button>
+        </div>
+        <!-- Type your message here -->
+        <form action="#" id="messageForm">
+          <input
+            type="text"
+            id="inputMessage"
+            placeholder="Enter your message..."
+            \
+          />
+          <button id="sendMessageBtn">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="sender.js"></script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas Whiteboard</title>
+
+    <!-- icons > font-awesome -->
+    <script
+      src="https://kit.fontawesome.com/3b1cc6c86a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Selectors start -->
+    <div id="selectFeatures">
+      <!-- Slider for line width -->
+      <div class="slidecontainer">
+        <p style="margin-bottom: 5px">Pencil/ Eraser size</p>
+        <input
+          type="range"
+          min="1"
+          max="70"
+          value="4"
+          class="slider"
+          id="myRange"
+        />
+      </div>
+
+      <!-- Eraser or Pen or Erase all -->
+      <div id="handler">
+        <button id="pen">
+          <i class="fas fa-pencil-alt fa-2x"></i>
+        </button>
+        <button id="eraser" style="margin-left: 13px">
+          <i class="fas fa-eraser fa-2x"></i>
+        </button>
+        <button onclick="clearCanvas()" style="margin-left: 13px">
+          <i class="fas fa-broom fa-2x"></i>
+        </button><br>
+        <button onclick="Undo()" style="margin-top: 20px">
+          <i class="fas fa-undo-alt" style="font-size: 1.75em"></i>
+        </button>
+        <button onclick="Redo()" style="margin-left: 13px">
+          <i class="fas fa-redo-alt" style="font-size: 1.75em"></i>
+        </button>
+      </div>
+
+      <!-- Color Picker -->
+      <div id="colorPickerContainer">
+        <label for="colorpicker">Color Picker</label>
+        <input type="color" id="colorpicker" value="#000000"  style="margin-top: 5px" />
+      </div>
+    </div>
+
+    <!-- Selectors end -->
+
+    <!-- canvas -->
+    <canvas id="canvas"></canvas>
+
+    <script src="./canvas.js"></script>
+  </body>
+</html>
